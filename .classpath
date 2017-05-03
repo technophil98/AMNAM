@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="doc"/>
+	<classpathentry kind="src" path="ressources"/>
+	<classpathentry kind="src" path="extra_src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/darcula"/>
+	<classpathentry kind="lib" path="ressources/libs/darcula.jar"/>
+	<classpathentry kind="lib" path="ressources/libs/gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="ressources/libs/AppleJavaExtensions-1.4.jar"/>
+	<classpathentry kind="output" path="out/production/20AMNAM"/>
+</classpath>

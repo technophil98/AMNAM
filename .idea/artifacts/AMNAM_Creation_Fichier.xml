@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AMNAM Creation Fichier">
+    <output-path>$PROJECT_DIR$/out/artifacts/AMNAM_Creation_Fichier</output-path>
+    <root id="archive" name="AMNAM Creation Fichier.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/io/amnam/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="20AMNAM" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ressources/libs/AppleJavaExtensions-1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ressources/libs/gson-2.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ressources/libs/darcula.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

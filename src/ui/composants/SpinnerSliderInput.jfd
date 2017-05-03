@@ -1,0 +1,55 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "99:1.0, 183:1.0"
+			"$rowSpecs": "0, 0"
+			"$hGap": 5
+			"$vGap": 5
+			"$alignTop": true
+			"$alignLeft": true
+		} ) {
+			name: "this"
+			"border": new javax.swing.border.EtchedBorder( 1, null, null )
+			"minimumSize": new java.awt.Dimension( 290, 90 )
+			"maximumSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			"preferredSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			add( new FormComponent( "javax.swing.JSpinner" ) {
+				name: "spinner"
+				"model": new javax.swing.SpinnerNumberModel {
+					stepSize: 1.0
+					value: 0.0
+				}
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "spinnerStateChanged", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+			} )
+			add( new FormComponent( "javax.swing.JSlider" ) {
+				name: "slider"
+				"majorTickSpacing": 50
+				"paintLabels": true
+				"paintTicks": true
+				"value": 70
+				"cursor": new java.awt.Cursor( 10 )
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "sliderStateChanged", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 1
+				"gridwidth": 2
+				"hAlign": 5
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labelNomVariable"
+				"labelFor": new FormReference( "spinner" )
+				"iconTextGap": 0
+				auxiliary() {
+					"JavaCodeGenerator.customCreateCode": "new JLabel(nomValeur);"
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 295, 90 )
+		} )
+	}
+}

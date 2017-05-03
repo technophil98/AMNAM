@@ -1,0 +1,412 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"title": "Statistiques et graphiques | AMNAM"
+			"minimumSize": new java.awt.Dimension( 960, 480 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "panelGraph"
+				"border": new javax.swing.border.TitledBorder( "Graphique" )
+				"minimumSize": new java.awt.Dimension( 272, 425 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "panelGraphSettings"
+					"minimumSize": new java.awt.Dimension( 250, 0 )
+					"preferredSize": new java.awt.Dimension( 250, 0 )
+					"border": new javax.swing.border.TitledBorder( "Paramètres du graphique" )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelLblGraphChoice"
+						"text": "Choix du graphique :"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 10
+						"y": 20
+						"width": 180
+					} )
+					add( new FormComponent( "javax.swing.JComboBox" ) {
+						name: "comboBoxGraphContentChoice"
+						auxiliary() {
+							"JavaCodeGenerator.typeParameters": "AbstractChartContent"
+						}
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboBoxGraphContentChoiceActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 10
+						"y": 40
+						"width": 230
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelLblColorLine"
+						"text": "Couleur contenu :"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 135
+						"height": 16
+						"x": 10
+						"y": 75
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "checkBoxShowGrid"
+						"text": "Afficher la grille"
+						"selected": true
+						"horizontalAlignment": 2
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "checkBoxShowActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 225
+						"height": 20
+						"x": 10
+						"y": 95
+					} )
+					add( new FormComponent( "ui.composants.ColorChooserPanel" ) {
+						name: "colorChooserContent"
+						"color": sfield java.awt.Color white
+						"background": new com.jformdesigner.model.SwingColor( "List.selectionBackground" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 15
+						"height": 15
+						"x": 220
+						"y": 75
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+						name: "panelAxisSettingsX"
+						"border": new javax.swing.border.TitledBorder( "Axe des x" )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblAxisXMin"
+							"text": "Minimum :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 20
+							"width": 75
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblAxisXMax"
+							"text": "Maximum :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 16
+							"x": 10
+							"y": 51
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblAxisXStep"
+							"text": "Pas :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 16
+							"x": 10
+							"y": 82
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "checkBoxShowAxisX"
+							"text": "Afficher l'axe"
+							"selected": true
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "checkBoxShowActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 5
+							"y": 128
+							"width": 215
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblAxisXColor"
+							"text": "Couleur axe :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 107
+						} )
+						add( new FormComponent( "ui.composants.ColorChooserPanel" ) {
+							name: "colorChooserAxisX"
+							"color": sfield java.awt.Color white
+							"background": &SwingColor0 new com.jformdesigner.model.SwingColor( "TextComponent.selectionBackgroundInactive" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 205
+							"y": 110
+							"width": 15
+							"height": 15
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spinnerAxisXMin"
+							"model": new javax.swing.SpinnerNumberModel {
+								stepSize: 1.0
+								value: 0.0
+							}
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "spinnerAxisXMinStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 145
+							"y": 15
+							"width": 75
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spinnerAxisXMax"
+							"model": new javax.swing.SpinnerNumberModel {
+								stepSize: 1.0
+								value: 10.0
+							}
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "spinnerAxisXMaxStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 26
+							"x": 145
+							"y": 45
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spinnerAxisXStep"
+							"model": new javax.swing.SpinnerNumberModel {
+								minimum: 0.1
+								stepSize: 0.5
+								value: 1.0
+							}
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "spinnerAxisXStepStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 26
+							"x": 145
+							"y": 80
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 230
+						"height": 155
+						"x": 10
+						"y": 120
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+						name: "panelAxisSettingsY"
+						"border": new javax.swing.border.TitledBorder( "Axe des y" )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblAxisYMin"
+							"text": "Minimum :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 20
+							"width": 75
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblAxisYMax"
+							"text": "Maximum :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 16
+							"x": 10
+							"y": 51
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblAxisYStep"
+							"text": "Pas :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 16
+							"x": 10
+							"y": 82
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "checkBoxShowAxisY"
+							"text": "Afficher l'axe"
+							"selected": true
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "checkBoxShowActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 5
+							"y": 128
+							"width": 215
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblAxisYColor"
+							"text": "Couleur axe :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 107
+						} )
+						add( new FormComponent( "ui.composants.ColorChooserPanel" ) {
+							name: "colorChooserAxisY"
+							"color": sfield java.awt.Color white
+							"background": #SwingColor0
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 205
+							"y": 110
+							"width": 15
+							"height": 15
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spinnerAxisYMin"
+							"model": new javax.swing.SpinnerNumberModel {
+								stepSize: 1.0
+								value: 0.0
+							}
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "spinnerAxisYMinStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 145
+							"y": 15
+							"width": 75
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spinnerAxisYMax"
+							"model": new javax.swing.SpinnerNumberModel {
+								stepSize: 1.0
+								value: 10.0
+							}
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "spinnerAxisYMaxStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 26
+							"x": 145
+							"y": 45
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "spinnerAxisYStep"
+							"model": new javax.swing.SpinnerNumberModel {
+								minimum: 0.1
+								stepSize: 0.5
+								value: 1.0
+							}
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "spinnerAxisYStepStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 26
+							"x": 145
+							"y": 80
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 230
+						"height": 155
+						"x": 10
+						"y": 280
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "West"
+				} )
+				add( new FormComponent( "ui.panneaux.ChartPane" ) {
+					name: "chartPane"
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"xMin": -0.0
+					"yMin": -0.0
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPaneStats"
+				"border": new javax.swing.border.TitledBorder( "Statistiques" )
+				"minimumSize": new java.awt.Dimension( 200, 42 )
+				"preferredSize": new java.awt.Dimension( 200, 119 )
+				"horizontalScrollBarPolicy": 31
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "left:125, right:25:1.0"
+					"$rowSpecs": "0, 0, 0, 0, 0, 0, 0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "panelStats"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textAreaLblDetectedEvents"
+						"text": "Nb d'évènements détectés"
+						"font": &SwingFont0 new com.jformdesigner.model.SwingFont( "Label.font" )
+						"lineWrap": true
+						"wrapStyleWord": true
+						"editable": false
+						"background": &SwingColor1 new com.jformdesigner.model.SwingColor( "Button.background" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": &Insets0 new java.awt.Insets( 0, 5, 0, 0 )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelDetectedEvents"
+						"text": "0"
+						"horizontalAlignment": 11
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"insets": &Insets1 new java.awt.Insets( 0, 0, 0, 5 )
+					} )
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textAreaLblExpectedEvents"
+						"text": "Nb d'évènements attendus"
+						"font": #SwingFont0
+						"lineWrap": true
+						"wrapStyleWord": true
+						"editable": false
+						"background": #SwingColor1
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": #Insets0
+						"gridy": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelExpectedEvents"
+						"text": "0"
+						"horizontalAlignment": 11
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": #Insets1
+						"gridy": 1
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textAreaLblArchivedEvents"
+						"text": "Nb d'évènements discartés"
+						"font": #SwingFont0
+						"lineWrap": true
+						"wrapStyleWord": true
+						"editable": false
+						"background": #SwingColor1
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": #Insets0
+						"gridy": 2
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelArchivedEvents"
+						"text": "0"
+						"horizontalAlignment": 11
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"insets": #Insets1
+						"gridy": 2
+					} )
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textAreaLblAccuracy"
+						"text": "Distance moyenne de l'obstacle"
+						"font": #SwingFont0
+						"lineWrap": true
+						"wrapStyleWord": true
+						"editable": false
+						"background": #SwingColor1
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": #Insets0
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelAccuracy"
+						"text": "00.00 m"
+						"horizontalAlignment": 11
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": #Insets1
+						"gridy": 3
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textAreaLblPrecision"
+						"text": "Écart de l'obstacle moyen"
+						"font": #SwingFont0
+						"lineWrap": true
+						"wrapStyleWord": true
+						"editable": false
+						"background": #SwingColor1
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": #Insets0
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelPrecision"
+						"text": "00.00 m"
+						"horizontalAlignment": 11
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": #Insets1
+						"gridy": 4
+						"gridx": 1
+					} )
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "East"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1070, 490 )
+		} )
+	}
+}

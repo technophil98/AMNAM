@@ -1,0 +1,128 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+			"autoSize": false
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panelPointDeDepart"
+				"border": new javax.swing.border.TitledBorder( null, "Point de départ", 4, 0, &Font0 new java.awt.Font( ".SF NS Text", 0, 18 ), null )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "buttonSelectionDepart"
+					"text": "Sélectionner sur la carte"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonSelectionDepartActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 320
+					"x": 5
+					"y": 104
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLabelCoordDepart"
+					"text": "Coordonnées :"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 30
+					"width": 130
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelCoordDepart"
+					"text": "N/D"
+					"horizontalAlignment": 4
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 160
+					"y": 30
+					"width": 162
+					"height": 16
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLabelCouleurDepart"
+					"text": "Couleur du repère :"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 67
+				} )
+				add( new FormComponent( "ui.composants.ColorChooserPanel" ) {
+					name: "choixCouleurDepart"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 292
+					"y": 60
+					"width": 30
+					"height": 30
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 10
+				"y": 55
+				"height": 145
+				"width": 330
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panelPointDArrivee"
+				"border": new javax.swing.border.TitledBorder( null, "Point d'arrivée", 4, 0, #Font0, null )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "buttonSelectionArrivee"
+					"text": "Sélectionner sur la carte"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonSelectionArriveeActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 320
+					"x": 5
+					"y": 104
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLabelCoordArrivee"
+					"text": "Coordonnées :"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 30
+					"width": 130
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelCoordArrivee"
+					"text": "N/D"
+					"horizontalAlignment": 4
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 160
+					"y": 30
+					"width": 162
+					"height": 16
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLabelCouleurArrivee"
+					"text": "Couleur du repère :"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 67
+				} )
+				add( new FormComponent( "ui.composants.ColorChooserPanel" ) {
+					name: "choixCouleurArrivee"
+					"color": sfield java.awt.Color blue
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 292
+					"y": 60
+					"width": 30
+					"height": 30
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 330
+				"height": 145
+				"x": 10
+				"y": 210
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonClearRoute"
+				"text": "Effacer le trajet"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonClearRouteActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 331
+				"height": 32
+				"x": 10
+				"y": 365
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 350, 645 )
+		} )
+	}
+}

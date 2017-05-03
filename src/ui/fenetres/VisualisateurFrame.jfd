@@ -1,0 +1,264 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"defaultCloseOperation": 0
+			"resizable": false
+			"title": "Visualisateur | AMNAM"
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowOpened", "thisWindowOpened", true ) )
+			add( new FormContainer( "javax.swing.JLayeredPane", new FormLayoutManager( class javax.swing.JLayeredPane ) ) {
+				name: "layeredPane"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class javax.swing.BoxLayout ) {
+					"axis": 1
+				} ) {
+					name: "panelBoutonsCarte"
+					"background": new java.awt.Color( 255, 204, 0, 255 )
+					"opaque": false
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonPlayPause"
+						"text": "P"
+						"minimumSize": new java.awt.Dimension( 50, 50 )
+						"maximumSize": new java.awt.Dimension( 60, 60 )
+						"preferredSize": new java.awt.Dimension( 50, 50 )
+						"opaque": false
+						"toolTipText": "Jouer/Pause"
+						"focusable": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonPlayPauseActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonVitesseAnim"
+						"text": "1x"
+						"preferredSize": new java.awt.Dimension( 50, 50 )
+						"minimumSize": new java.awt.Dimension( 50, 50 )
+						"maximumSize": new java.awt.Dimension( 60, 60 )
+						"opaque": false
+						"font": new java.awt.Font( ".SF NS Text", 1, 16 )
+						"toolTipText": "Vitesse d'animation"
+						"focusable": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonVitesseAnimActionPerformed", true ) )
+					} )
+					add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+						name: "vSpacerCarte1"
+						"opaque": false
+						"focusable": false
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonZoomIn"
+						"text": "+"
+						"maximumSize": new java.awt.Dimension( 60, 60 )
+						"minimumSize": new java.awt.Dimension( 50, 50 )
+						"preferredSize": new java.awt.Dimension( 50, 50 )
+						"opaque": false
+						"toolTipText": "Zoom +"
+						"focusable": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonZoomInActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonZoomOut"
+						"text": "-"
+						"maximumSize": &Dimension0 new java.awt.Dimension( 60, 60 )
+						"minimumSize": &Dimension1 new java.awt.Dimension( 50, 50 )
+						"preferredSize": &Dimension2 new java.awt.Dimension( 50, 50 )
+						"opaque": false
+						"toolTipText": "Zoom -"
+						"focusable": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonZoomOutActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonCenterMap"
+						"text": "C"
+						"maximumSize": #Dimension0
+						"minimumSize": #Dimension1
+						"preferredSize": #Dimension2
+						"opaque": false
+						"toolTipText": "Centrer la carte"
+						"focusable": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonCenterMapActionPerformed", true ) )
+					} )
+					add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+						name: "vSpacerCarte2"
+						"opaque": false
+						"focusable": false
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonSuperpositions"
+						"text": "S"
+						"maximumSize": new java.awt.Dimension( 60, 60 )
+						"minimumSize": new java.awt.Dimension( 50, 50 )
+						"preferredSize": new java.awt.Dimension( 50, 50 )
+						"opaque": false
+						"toolTipText": "Superpositions"
+						"focusable": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonSuperpositionsActionPerformed", true ) )
+					} )
+					add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+						name: "vSpacerCarte3"
+						"opaque": false
+						"focusable": false
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonAjoutTrajet"
+						"text": "T"
+						"preferredSize": new java.awt.Dimension( 50, 50 )
+						"maximumSize": new java.awt.Dimension( 60, 60 )
+						"minimumSize": new java.awt.Dimension( 50, 50 )
+						"opaque": false
+						"toolTipText": "Simulation d'un trajet"
+						"focusable": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonAjoutTrajetActionPerformed", true ) )
+					} )
+					add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+						name: "vSpacerCarte4"
+						"opaque": false
+						"focusable": false
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonStats"
+						"text": "St"
+						"maximumSize": new java.awt.Dimension( 60, 60 )
+						"minimumSize": new java.awt.Dimension( 50, 50 )
+						"preferredSize": new java.awt.Dimension( 50, 50 )
+						"opaque": false
+						"toolTipText": "Statistiques"
+						"focusable": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonStatsActionPerformed", true ) )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"height": 440
+					"x": 1225
+					"y": 110
+					"layer": 100
+				} )
+				add( new FormComponent( "ui.panneaux.Carte" ) {
+					name: "carte"
+					"background": new java.awt.Color( 154, 118, 50, 255 )
+					auxiliary() {
+						"JavaCodeGenerator.customCreate": true
+					}
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "carteMouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "carteMousePressed", true ) )
+					addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "carteKeyPressed", true ) )
+				}, new FormLayoutConstraints( null ) {
+					"x": 0
+					"y": 0
+					"width": 1280
+					"height": 645
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 0
+				"y": 0
+				"width": 1280
+				"height": 645
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+				"autoSize": false
+			} ) {
+				name: "panelNavette"
+				"border": new javax.swing.border.EtchedBorder( 1, null, null )
+				add( new FormComponent( "javax.swing.JSlider" ) {
+					name: "sliderNavetteSimulation"
+					"paintLabels": true
+					addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "sliderNavetteSimulationStateChanged", true ) )
+					addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "sliderNavetteSimulationKeyPressed", true ) )
+					addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "sliderNavetteSimulationKeyTyped", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 5
+					"width": 1190
+					"height": 35
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelHourglassMin"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 20
+					"y": 12
+					"width": 20
+					"height": 20
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelHourglassMax"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 20
+					"height": 20
+					"x": 1240
+					"y": 12
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelTimestamp"
+					"text": "(15:00:00 / 15:00:00)"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 1135
+					"y": 40
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelTitleTimeline"
+					"text": "Ligne du temps"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 40
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 1280
+				"height": 60
+				"x": 0
+				"y": 645
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menuVisualisateur"
+					"text": "Visualisateur"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItemOuvrir"
+						"text": "Ouvrir"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemOuvrirActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItemMapColor"
+						"text": "Choisir la couleur de la carte"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemMapColorActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separateur1"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItemFermerVisualisateur"
+						"text": "Revenir au menu principal"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemFermerVisualisateurActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItemQuitter"
+						"text": "Quitter"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemQuitterActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menuAide"
+					"text": "Aide"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItemAPropos"
+						"text": "À propos"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemAProposActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItemGuide"
+						"text": "Guide d'utilisation"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemGuideActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItemConceptSci"
+						"text": "Concepts scientifiques"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItemConceptSciActionPerformed", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1283, 753 )
+		} )
+	}
+}

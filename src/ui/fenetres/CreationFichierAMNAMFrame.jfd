@@ -1,0 +1,510 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+			"autoSize": false
+		} ) {
+			name: "this"
+			"title": "Création d'un fichier | AMNAM"
+			"$sizePolicy": 1
+			"resizable": false
+			"defaultCloseOperation": 0
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "logoAMNAM"
+				"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 55
+				"height": 50
+				"x": 5
+				"y": 5
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labelTitle"
+				"text": "Création de fichier .amnam"
+				"font": new java.awt.Font( ".SF NS Text", 0, 22 )
+				"horizontalAlignment": 2
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 330
+				"height": 50
+				"x": 65
+				"y": 5
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panelURL"
+				"border": new javax.swing.border.TitledBorder( "Chemin d'accès du fichier" )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelNomFichier"
+					"horizontalAlignment": 11
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 165
+					"y": 58
+					"height": 24
+					"width": 215
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLblNomFichier"
+					"text": "Nom du fichier :"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 58
+					"width": 120
+					"height": 24
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLblComments"
+					"text": "Commentaires :"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 149
+					"width": 120
+					"height": 24
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "buttonChoisirURL"
+					"text": "Choisir le chemin d'accès"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonChoisirURLActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 20
+					"width": 370
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPaneComments"
+					"horizontalScrollBarPolicy": 31
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textAreaComments"
+						"background": &SwingColor0 new com.jformdesigner.model.SwingColor( "EditorPane.inactiveBackground" )
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 179
+					"width": 370
+					"height": 58
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPaneURL"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textAreaURL"
+						"background": #SwingColor0
+						"editable": false
+						"text": "Cliquez sur le bouton « Choisir le chemin d'accès » pour débuter"
+						"lineWrap": true
+						"wrapStyleWord": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 370
+					"height": 55
+					"x": 10
+					"y": 88
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 5
+				"y": 140
+				"width": 390
+				"height": 250
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonAnnuler"
+				"text": "Annuler"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonAnnulerActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 145
+				"height": 32
+				"x": 5
+				"y": 568
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonCreer"
+				"text": "Créer le fichier"
+				"enabled": false
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonCreerActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 240
+				"height": 32
+				"x": 155
+				"y": 568
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panelObstacles"
+				"border": new javax.swing.border.TitledBorder( "Données des obstacles (Il faut appliquer à chaque fois)" )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelStatusObstacle"
+					"horizontalAlignment": 11
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 65
+					"height": 26
+					"x": 315
+					"y": 20
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxObstacle"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "1 - Nid de poule"
+						addElement( "1 - Nid de poule" )
+						addElement( "2 - Nid de poule" )
+						addElement( "3 - Bloqueur" )
+						addElement( "4 - Bloqueur" )
+						addElement( "5 - Variateur" )
+						addElement( "6 - Variateur" )
+						addElement( "7 - Neige" )
+						addElement( "8 - Glace" )
+						addElement( "9 - Pluie" )
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboBoxObstacleActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 20
+					"width": 180
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textFieldObsPosX"
+					addEvent( new FormEvent( "javax.swing.event.CaretListener", "caretUpdate", "textFieldObsCaretUpdate", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 76
+					"width": 180
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textFieldObsPosY"
+					addEvent( new FormEvent( "javax.swing.event.CaretListener", "caretUpdate", "textFieldObsCaretUpdate", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 200
+					"y": 76
+					"width": 180
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textFieldObsRadius"
+					addEvent( new FormEvent( "javax.swing.event.CaretListener", "caretUpdate", "textFieldObsCaretUpdate", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 130
+					"width": 180
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLblObsPosX"
+					"text": "Position X (m) :"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 53
+					"width": 180
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLblObsPosY"
+					"text": "Position Y (m):"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 175
+					"height": 16
+					"x": 200
+					"y": 53
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "labelLblObsRadius"
+					"text": "Rayon (m) :"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 107
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "buttonObstacleApply"
+					"text": "Appliquer"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonObstacleApplyActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 291
+					"y": 125
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "buttonObstacleReset"
+					"text": "Effacer"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonObstacleResetActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 90
+					"height": 32
+					"x": 200
+					"y": 125
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "buttonObstacleOmit"
+					"text": "Omettre"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonObstacleOmitActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 90
+					"height": 26
+					"x": 200
+					"y": 20
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 5
+				"y": 395
+				"width": 390
+				"height": 165
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panelFileInput"
+				"border": new javax.swing.border.TitledBorder( "Saisie de fichiers" )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "panelManualInput"
+					"border": new javax.swing.border.TitledBorder( "Saisie manuelle" )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+						name: "panelFichierInit"
+						"border": new javax.swing.border.TitledBorder( "Chemin d'accès du fichier « init.csv »" )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelStatusInit"
+							"horizontalAlignment": 11
+							"text": "N/A"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 310
+							"y": 20
+							"width": 65
+							"height": 35
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "buttonChoisirURLInit"
+							"text": "Choisir le fichier « init.csv »"
+							"enabled": false
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonChoisirURLInitActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 60
+							"width": 365
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPaneURLInit"
+							add( new FormComponent( "javax.swing.JTextArea" ) {
+								name: "textAreaURLInit"
+								"background": #SwingColor0
+								"editable": false
+							} )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 295
+							"height": 35
+							"x": 10
+							"y": 20
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 385
+						"height": 100
+						"x": 5
+						"y": 20
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+						name: "panelFichierEvent"
+						"border": new javax.swing.border.TitledBorder( "Chemin d'accès du fichier « event.csv »" )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelStatusEvent"
+							"horizontalAlignment": 11
+							"text": "N/A"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 65
+							"height": 35
+							"x": 310
+							"y": 20
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "buttonChoisirURLEvent"
+							"text": "Choisir le fichier « event.csv »"
+							"enabled": false
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonChoisirURLEventActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 60
+							"width": 365
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPaneURLEvent"
+							add( new FormComponent( "javax.swing.JTextArea" ) {
+								name: "textAreaURLEvent"
+								"background": #SwingColor0
+								"editable": false
+							} )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 295
+							"height": 35
+							"x": 10
+							"y": 20
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 385
+						"height": 100
+						"y": 120
+						"x": 5
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+						name: "panelPeriod"
+						"border": new javax.swing.border.TitledBorder( "Fichiers périodiques" )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblNbAttendu"
+							"text": "Nombre de fichiers attendus : "
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 25
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelNbAttendu"
+							"horizontalAlignment": 11
+							"text": "N/A"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 200
+							"y": 25
+							"width": 174
+							"height": 16
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblNbValide"
+							"text": "Nombre de fichiers valides : "
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 188
+							"height": 16
+							"x": 10
+							"y": 46
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelNbValide"
+							"horizontalAlignment": 11
+							"text": "N/A"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 174
+							"height": 16
+							"x": 200
+							"y": 46
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblFichiersManquants"
+							"text": "Fichiers manquants :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 188
+							"height": 16
+							"x": 10
+							"y": 67
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPaneFichiersManquants"
+							"horizontalScrollBarPolicy": 31
+							add( new FormComponent( "javax.swing.JTextArea" ) {
+								name: "textAreaFichierPeriodManquants"
+								"editable": false
+							} )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 88
+							"width": 180
+							"height": 77
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "buttonChoisirURLPeriod"
+							"text": "Choisir les fichiers périodiques"
+							"enabled": false
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonChoisirURLPeriodActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 10
+							"y": 168
+							"width": 365
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "labelLblPeriodCheminAcces"
+							"text": "Chemin d'accès :"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 195
+							"y": 65
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPaneURLPeriod"
+							"horizontalScrollBarPolicy": 31
+							add( new FormComponent( "javax.swing.JTextArea" ) {
+								name: "textAreaURLPeriod"
+								"background": #SwingColor0
+								"editable": false
+								"lineWrap": true
+								"wrapStyleWord": true
+							} )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 180
+							"height": 77
+							"x": 195
+							"y": 88
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 385
+						"height": 210
+						"y": 220
+						"x": 5
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 5
+					"y": 155
+					"width": 395
+					"height": 435
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "panelAutomaticInput"
+					"border": new javax.swing.border.TitledBorder( "Saisie automatique" )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonPickDirectory"
+						"text": "Importer dossier"
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonPickDirectoryActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 10
+						"y": 20
+						"width": 375
+						"height": 40
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPaneResultAutomatic"
+						"horizontalScrollBarPolicy": 31
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "textAreaResultAutomatic"
+							"background": #SwingColor0
+							"editable": false
+							"lineWrap": true
+							"wrapStyleWord": true
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 375
+						"height": 40
+						"x": 10
+						"y": 85
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelLblResultAutomatic"
+						"text": "Résultats :"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 10
+						"y": 65
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 395
+					"height": 132
+					"x": 5
+					"y": 20
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 395
+				"y": 5
+				"width": 415
+				"height": 595
+			} )
+			add( new FormComponent( "javax.swing.JTextArea" ) {
+				name: "textArea1"
+				"text": "Fonctionnement:\n1. Sélection du répertoire et du nom du fichier\n2. Saisie de la position initiale et du rayon des obstacles\n3. Sélection des fichiers de données de simulation"
+				"font": new com.jformdesigner.model.SwingFont( "Label.font" )
+				"editable": false
+				"wrapStyleWord": true
+				"lineWrap": true
+				"background": new com.jformdesigner.model.SwingColor( "Button.background" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 390
+				"height": 80
+				"x": 5
+				"y": 60
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 815, 630 )
+		} )
+	}
+}

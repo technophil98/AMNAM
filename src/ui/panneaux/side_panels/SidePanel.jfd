@@ -1,0 +1,27 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+			"autoSize": false
+		} ) {
+			name: "this"
+			"border": new ui.composants.AdaptableTitledBorder
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonFermerPanneau"
+				"text": "x"
+				"font": new java.awt.Font( ".SF NS Text", 0, 10 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonFermerPanneauActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 310
+				"y": 0
+				"width": 35
+				"height": 35
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 350, 645 )
+		} )
+	}
+}

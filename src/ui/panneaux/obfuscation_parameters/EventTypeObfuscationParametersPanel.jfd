@@ -1,0 +1,49 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormComponent( "ui.composants.SpinnerSliderInput" ) {
+				name: "ssiErrorRate"
+				"nomValeur": "Taux d'erreur (%)"
+				"valeur": 15.0
+				"increment": 0.5
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 5
+				"y": 5
+				"width": 390
+				"height": 95
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panelTypeConfig"
+				"border": new javax.swing.border.TitledBorder( "Configuration du type" )
+				add( new FormComponent( "javax.swing.JCheckBox" ) {
+					name: "checkBoxRandomType"
+					"text": "Assigner un type d'évènement précis en guise d'erreur"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "checkBoxRandomTypeActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 380
+					"x": 5
+					"y": 20
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxRandomType"
+					"enabled": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"y": 40
+					"width": 380
+					"x": 5
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 5
+				"y": 105
+				"height": 75
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>AMNAM | Guide d'utilisation</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="dashboard.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">AMNAM</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="index.html">À propos</a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: #fff;">Guide d'utilisation</a>
+                        </li>
+                        <li>
+                            <a href="concepts_sci.html">Concepts scientifiques</a>
+                        </li>
+                        <li>
+                            <a href="doc.html">Doc</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#">Introduction</a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#fonctionnement">Fonctionnement<br></a>
+                        </li>
+                        <li>
+                            <a href="#traduction">Traduction<br></a>
+                        </li>
+                        <li>
+                            <a href="#obfuscation">Obfuscation<br></a>
+                        </li>
+                        <li>
+                            <a href="#analyse">Analyse<br></a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#manipulations">Manipulations<br></a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#ficherAMNAM">Fichiers AMNAM<br></a>
+                        </li>
+                        <li>
+                            <a href="#introFichierAMNAM">Introduction<br></a>
+                        </li>
+                        <li>
+                            <a href="#creationFichierAMNAM">Création d'un fichier<br></a>
+                        </li>
+                        <li>
+                            <a href="#modificationFichierAMNAM">Modification d'un fichier<br></a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#visualisateur">Visualisateur<br></a>
+                        </li>
+                        <li>
+                            <a href="#controlesVisualisateur">Contrôles<br></a>
+                        </li>
+                        <li>
+                            <a href="#configSuperpositions">Configuration des superpositions<br></a>
+                        </li>
+                        <li>
+                            <a href="#simulationTrajet">Simulation d'un trajet<br></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <h1 class="page-header">Guide d'utilisation</h1>
+                    <div id="introduction">
+                        <h2 class="sub-header">Introduction</h2>
+                        <div class="table-responsive">
+                            <p>Notre plateforme, dans une application concrète, opère en quatre étapes :&nbsp;</p>
+                            <ol>
+                                <li>la génération d’un évènement;</li>
+                                <li>l’envoi de celui-ci;</li>
+                                <li>le traitement des évènements pour la création d’une perception globale;</li>
+                                <li>la distribution des nouvelles informations aux véhicules.</li>
+                            </ol>
+                            <img src="assets/img/schema_concept.png" style="width:100%;">
+                            <p>Initialement, le véhicule, par ses capteurs et sa perception augmentée, recueille et génère un nombre donné d’informations sous forme d’évènements. Par exemple, un choc causé par un trou dans la chaussée génère un évènement dans la perception du véhicule.</p>
+                            <p>Une fois que le message contenant le récent évènement est prêt, la procédure d’envoi suivante est entamée :</p>
+                            <img src="assets/img/cyberPhysique_shema.png" style="width:50%" class="pull-right">
+                            <p>Quand l’infrastructure en borne de route reçoit un évènement par DSRC, elle le redirige à l’infonuage central.&nbsp;</p>
+                            <p>Lors de la réception d’évènement, l’infonuage enregistre ce dernier dans une base de données d’archivage. Suite à l’analyse ponctuelle des évènements par nos algorithmes, la perception augmentée calculée sera sauvegardée dans une autre base de donnée. Ultimement, l’analyse de ces données profitera à l’utilisateur sur la route.&nbsp;</p>
+                            <p>Les étapes expliquées ci-haut est une estimation du fonctionnement réel de notre plateforme. Par contre, le budget qui nous est alloué actuellement nous empêche de faire des tests à grande échelle; une future phase du projet nous permettra d’intégrer notre plateforme dans une plus grande entitée qui se rapproche de l’application réel de notre projet. Plutôt, nous développerons l’application <b>AMNAM</b> (AMNAM N’est Aucunement Maps), une suite d’outils permettant le traitement de données véhiculaires provenant d’un simulateur développé par notre partenaire Virage Simulation. Cette plateforme nous permettra de tester nos algorithmes et différents systèmes sous-jacents.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="sub-header" id="fonctionnement">Fonctionnement</h2>
+                        <div>
+                            <h3 id="traduction">Traduction<br></h3>
+                            <div>
+                                <p><img src="assets/img/transposition.png" class="pull-right">Dans la réalité, un véhicule lève un évènement pour chaque observation sur les conditions routières qu’il fait. Dans la simulation, chaque véhicule lève un évènement à chaque pas de simulation. L’idée est qu’un évènement qui est à proximité d’un autre et qui est suffisamment similaire a probablement la même source, et devrait n’être levé qu’une fois pour le traitement. La traduction des fichiers de données provenant du simulateur est effectué en utilisant un algorithme de regroupement très élémentaire, car la fiabilité des données initiales est grande et celles-ci suivent toutes une organisation particulière. L’algorithme utilisé fusionne les évènements qui sont du même type, du même véhicule, suffisamment proche spatialement et suffisamment proche temporellement.<br></p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 id="obfuscation">Obfuscation</h3>
+                            <div>
+                                <img src="assets/img/obfuscation.png" class="pull-right">
+                                <p class="p1">En général, les évènements que génèrent les simulateurs sont d’une grande précision. Il est impossible de faire une représentation du monde réel si nous faisons affaire avec des véhicules de simulation avec de « parfaits capteurs », un comportement routier exemplaire et une connectivité réseau entièrement fiable. Pour tester la robustesse de nos algorithmes de traitement de données, nous devons les alimenter d’informations des plus réelles qu’il soit.</p>
+                                <p></p>
+                                <p class="p1">Pour cela, nous ajoutons une étape prénommée « Obfuscation » dans notre démarche en laboratoire. Cette étape a pour but d’introduire, à l’aide de différents modèles mathématiques, une certaine incertitude sur les données générées par les simulateurs. De cette façon, nous obtenons des évènements plus réels considérant les multiples facteurs d’erreurs pouvant survenir dans l’application concrète de notre plateforme.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 id="analyse">Analyse</h3>
+                            <div>
+                                <p><img src="assets/img/analyse.png" class="pull-right">Une fois les données obfusquées, le traitement essaye de retrouver la position des évènements initiaux. Tout comme la transposition initiale en évènement, l’utilisation d’un algorithme de regroupement est nécessaire afin de réduire le nombre d’évènements.<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="sub-header" id="manipulations">Manipulations</h2>
+                        <div>
+                            <h3>Fichiers AMNAM ( « .amnam » )<br></h3>
+                            <img src="assets/img/treeFichierAMNAM.png" class="pull-right">
+                            <div>
+                                <h4 style="" id="introFichierAMNAM">Introduction</h4>
+                                <p>Afin de stocker toutes les informations découlant des diverses étapes de traitement, nous avons développé notre propre fichier : les fichiers « .amnam ». Ce type de fichier a été créé dans le but d’être ouvert, de petite taille et facilement modifiable.</p>
+                            </div>
+                            <div>
+                                <h4 style="" id="creationFichierAMNAM">Création d'un fichier<br></h4>
+                                <p class="p1"><span class="s1">À l’écran d’accueil, l’utilisateur choisit l’option « Nouveau fichier AMNAM ». Cette fenêtre sert à créer un fichier « .amnam » à partir de données des simulateurs de Virage Simulation. Ces données sont sauvegardées sous forme de fichier « .csv ». Tout d’abord, l’utilisateur spécifie un répertoire en appuyant sur « Choisir le chemin d’accès ». Ensuite, celui-ci a la possibilité d’entrer un commentaire pour le nouveau fichier.</span></p>
+                                <p class="p1"><span class="s1">Par la suite, l’utilisateur dispose de deux choix pour spécifier les fichiers de simulation à inclure.</span></p>
+                                <p class="p1"><span class="s1">S’il utilise la méthode automatique, il n’a qu’à cliquer sur le bouton « Importer dossier » puis spécifier le dossier contenant tous les fichiers requis.</span></p>
+                                <p class="p1"><span class="s1">Autrement, la méthode manuelle permet la spécification individuelle de chaque fichier à ajouter selon le même mécanisme que la sélection du dossier en mode automatique.</span></p>
+                                <p class="p1"><span class="s1">Finalement, l’utilisateur doit entrer les positions des obstacles tels que placés dans le logiciel de simulation. Pour chaque obstacle, il doit l’inclure, entrer ses coordonnés en X et en Y en plus son rayon de détection spécifié dans la configuration du scénario puis appuyer sur le bouton « appliquer » pour sauvegarder cet obstacle.</span></p>
+                                <p class="p1"></p>
+                                <p class="p1"><span class="s1">Ultimement, l’utilisateur appuie sur le bouton « Créer le fichier » qui crée le fichier au répertoire spécifié.</span></p>
+                            </div>
+                            <div>
+                                <h4 style="" id="modificationFichierAMNAM">Modification d'un fichier<br></h4>
+                                <p></p>
+                                <p class="p1">À l’écran d’accueil, l’utilisateur choisit l’option « Ouvrir un fichier AMNAM ». Après la sélection du fichier, la fenêtre d’inspection de fichier apparait. Cet écran agit comme portail vers les différentes fonctions d’AMNAM. Sur celui-ci se trouve le nom du fichier, son répertoire, son état ainsi que le commentaire ajouté au fichier lors de sa création. Les états possibles sont&nbsp;:</p>
+                                <ul>
+                                    <li>«  n’inclut que les CSV de simulation  » ;</li>
+                                    <li>« Informations sous forme d’évènements  » ;</li>
+                                    <li>«  Évènements obfusqués  » ;</li>
+                                    <li>«  Résultats de l’analyse des données  ».</li>
+                                </ul>
+                                <p class="p1">Les différentes sections sous la zone de texte de commentaire représentent les différentes étapes de traitement. Nous pouvons voir, pour chacune des étapes, le statut d’exécution et de chargement de celle-ci en plus de la date de l’exécution de ladite étape. Les boutons sont activés en fonction de l’étape courante du fichier.</p>
+                                <p class="p1">Lors du clic sur le bouton, l’étape de traitement qu’il désigne sera exécutée puis ses résultats sont stockés dans le fichier «<span class="s1">  .amnam</span>  ».&nbsp;</p>
+                                <p class="p1"></p>
+                                <p class="p1">À chaque étape dans l’analyse de données, il est possible de visualiser l’état courant du traitement des données en appuyant sur le bouton «  Visualiser  ».</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 id="visualisateur">Visualisateur<br></h3>
+                            <div>
+                                <img src="assets/img/visualisateur.png" style="width:100%;">
+                                <h4 style="" id="controlesVisualisateur">Contrôles</h4>
+                                <h5>Sur le clavier&nbsp;:</h5>
+                                <p class="p1">d – Envoie la simulation au début.</p>
+                                <p class="p1">f – Envoie la simulation à la fin.</p>
+                                <p class="p1">Espace — Démarre / pause la lecture de la simulation.</p>
+                                <p class="p2"><br></p>
+                                <h5>Avec la souris&nbsp;:</h5>
+                                <img src="assets/img/btnsVisualisateur.png" class="pull-right" style="width: 5%;">
+                                <p class="p1">Cliqué-glissé — Déplace la carte.</p>
+                                <p class="p1">Roulette — Ajuste le zoom.</p>
+                                <p class="p2"><br></p>
+                                <h5>Avec les boutons latéraux (en ordre) :</h5>
+                                <ol>
+                                    <li>Débute / pause la lecture de la simulation</li>
+                                    <li>Modifie la vitesse de l’animation</li>
+                                    <li>Augmente le zoom</li>
+                                    <li>Diminue le zoom</li>
+                                    <li>Recentre la carte (permets de revenir à la position&nbsp;0, 0)</li>
+                                    <li>Configuration des superpositions</li>
+                                    <li>Débute/pause la lecture de la simulation</li>
+                                    <li>Simulation d’un trajet</li>
+                                    <li>Accède aux statistiques (s’il y a des évènements dans le fichier AMNAM)</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h4 style="" id="configSuperpositions">Configuration des superpositions<br></h4>
+                                <p></p>
+                                <p class="p1"></p>
+                                <p class="p1">Dans ce panneau, accessible par le bouton latéral, l’utilisateur peut demander au visualisateur de modifier la façon qu’il fait le rendu de chaque élément de la carte. Il peut décider de mettre un élément en avant ou en arrière-plan en modifiant l’ordre dans lequel il apparait dans la liste. Il fait ceci en sélectionnant l’élément à modifier et en appuyant sur les boutons prévus à cet effet. S’il désire la cacher, il appuie sur le bouton « activer/désactiver » et s’il veut configurer la superposition, il appuie sur le bouton « configurer ».</p>
+                            </div>
+                            <div>
+                                <h4 style="" id="simulationTrajet">Simulation d'un trajet<br></h4>
+                                <img src="assets/img/simulation_trajet.png" class="pull-right" style="width: 30%;">
+                                <p></p>
+                                <p class="p1"></p>
+                                <p class="p1"></p>
+                                <p class="p1">Dans ce panneau, accessible par le bouton latéral, l’utilisateur peut demander au visualisateur de calculer le chemin le plus court d’un endroit de la carte à un autre. Il fait ceci en appuyant sur le bouton de sélection du point d’arrivée et de départ pour les sélectionner. Ensuite, il appuie sur le bouton « simuler le trajet » pour voir le trajet sur la carte.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>

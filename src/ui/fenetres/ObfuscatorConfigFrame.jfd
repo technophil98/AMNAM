@@ -1,0 +1,59 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"$sizePolicy": 1
+			"resizable": false
+			"title": "Configuration obfuscation | AMNAM"
+			"defaultCloseOperation": 0
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane"
+				add( new FormComponent( "ui.panneaux.obfuscation_parameters.PositionObfuscationParametersPanel" ) {
+					name: "positionObfuscationParametersPanel"
+				}, new FormLayoutConstraints( null ) {
+					"title": "Position"
+				} )
+				add( new FormComponent( "ui.panneaux.obfuscation_parameters.PacketLossObfuscationParametersPanel" ) {
+					name: "packetLossObfuscationParametersPanel"
+				}, new FormLayoutConstraints( null ) {
+					"title": "Perte de paquets"
+				} )
+				add( new FormComponent( "ui.panneaux.obfuscation_parameters.EventTypeObfuscationParametersPanel" ) {
+					name: "eventTypeObfuscationParametersPanel"
+				}, new FormLayoutConstraints( null ) {
+					"title": "Type d'évènement"
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 0
+				"y": 5
+				"width": 405
+				"height": 440
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonCancel"
+				"text": "Annuler"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonCancelActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 5
+				"y": 450
+				"width": 195
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonApply"
+				"text": "Appliquer"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonApplyActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 205
+				"y": 450
+				"width": 195
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 405, 515 )
+		} )
+	}
+}

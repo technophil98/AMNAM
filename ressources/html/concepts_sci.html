@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>AMNAM | Concepts scientifiques</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="dashboard.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">AMNAM</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="index.html">À propos</a>
+                        </li>
+                        <li>
+                            <a href="guide.html">Guide d'utilisation</a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: #fff;">Concepts scientifiques</a>
+                        </li>
+                        <li>
+                            <a href="doc.html">Doc</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#regroup">Regroupement<span class="sr-only"></span></a>
+                        </li>
+                        <li>
+                            <a href="#introRegroup">Introduction au regroupement<br></a>
+                        </li>
+                        <li>
+                            <a href="#optics">Algorithme OPTICS<br></a>
+                        </li>
+                        <li>
+                            <a href="#kmean">Algorithme K-Moyenne<br></a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#graphes">Graphes<br></a>
+                        </li>
+                        <li>
+                            <a href="#introGraphes">Introduction aux graphes<br></a>
+                        </li>
+                        <li>
+                            <a href="#astar">Algorithme A*<br></a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#stats">Statistiques<br></a>
+                        </li>
+                        <li>
+                            <a href="#distributionNormale">Distribution normale<br></a>
+                        </li>
+                        <li>
+                            <a href="#moyenne">Moyenne<br></a>
+                        </li>
+                        <li>
+                            <a href="#ecartType">&Eacute;cart type<br></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <h1 class="page-header">Concepts scientifiques</h1>
+                    <div>
+                        <h2 class="sub-header" id="regroupement">Regroupement</h2>
+                        <div class="table-responsive">
+                            <h3 id="introRegroup">Introduction</h3>
+                            <p class="p1">Pour l’analyse, la multitude de données levées lors de la simulation, il est nécessaire de réduire leur nombre. Pour ce faire, nous utilisons des algorithmes de groupement de valeur qui permet de regrouper les données qui sont similaires l’une à l’autre. Ces algorithmes sont utilisés trois fois&nbsp;: lors de la traduction des évènements à partir des fichiers sources ; sur les évènements obfusqués durant la phase d’analyse ; et finalement durant l’extraction des résultats pour comparer les évènements initiaux et les évènements finaux.</p>
+                            <p class="p1">En premier lieu, nous regroupons pour la traduction des évènements. Dans la simulation, chaque véhicule, lève un évènement à chaque pas de simulation. L’idée est qu’un évènement qui est à proximité d’un autre qui est suffisamment similaire a probablement la même source, et devrait n’être levé qu’une fois pour le traitement. La traduction des fichiers de données provenant du simulateur est effectuée en utilisant un algorithme de regroupement très élémentaire, car la fiabilité des données initiales est grande et celles-ci suivent toutes une organisation particulière. L’algorithme utilisé fusionne les évènements qui sont du même type, du même véhicule, suffisamment proche spatialement et suffisamment proche temporellement.</p>
+                            <p class="p1">En deuxième lieu, l’analyse des évènements regroupe les évènements obfusqués semblables. L’algorithme de regroupement utilisé est OPTICS.</p>
+                            <p class="p1">En troisième lieu, l’extraction des résultats utilise du regroupement pour associer chaque évènement initial aux évènements finaux. L’approche utilisée est de simplement associer l’évènement final à l’évènement initial le plus proche et de même type.</p>
+                        </div>
+                        <div>
+                            <h3 id="optics">OPTICS</h3>
+                            <img src="assets/img/OPTICS.png" style="width:30%;" class="pull-right">
+                            <p>Le but d’OPTICS (« Ordering points to identify the clustering structure» ) est de créer une grappe, un ensemble d’évènements, en se basant sur deux critères :</p>
+                            <ol>
+                                <li>la grappe contient suffisamment de points;</li>
+                                <li>les points de la grappe sont assez proches les uns des autres.</li>
+                            </ol>
+                            <p>Une fois une grappe générée, l’algorithme essaie de rajouter des éléments valides à celle-ci. Pour chacun des données restantes, l’algorithme recommence du début, en créant une autre grappe. L’avantage de cette méthode est que l’algorithme ne nécessite pas que les données aient une distribution particulière. Par exemple, lors d’un embouteillage, la position des véhicules, donc la position des évènements, est analogue à la disposition des routes, car l’évènement n’est pas ponctuel, c’est-à-dire concentré à un seul endroit, mais s’étale sur une longue surface. Dans certains cas, la distribution des données est aléatoire, chaotique et inconnue par la plateforme de traitement ce qui fait d’OPTICS un algorithme parfaitement adéquat. Dans le monde physique, il est cependant raisonnable de s’attendre à ce que certains évènements soient distribués de façon gaussienne. Cela permettrait à d’autres algorithmes spécialisés de donner plus d’information lors de l’analyse comme «Expectation Maximisation». OPTICS permet donc de faire l’analyse des données de façon satisfaisante, pour toute distribution statistiques, même les normales.</p>
+                        </div>
+                        <div>
+                            <h3 id="kmean">K-Moyenne</h3>
+                            <p class="p1">Cet algorithme est un des plus élémentaires de l’exploration de données. Il consiste à déterminer une liste de points (appelé centroïdes) qui, à l’aide d’un processus itératif, converge vers les points où il y a des regroupements de données. Chaque itération est composée de deux étapes. Premièrement, chacune des données est associée au centroïde le plus proche. Ensuite, chaque centroïde est déplacé à la moyenne vectorielle des positions des données associées au centroïde. Après quelques itérations, la position des centroïdes n’est plus modifiée. On dit alors que l’algorithme a convergé et que les grappes sont définies par l’ensemble des points qui est associé à chaque centroïde, comme à la première étape d’itération. Cette méthode de regroupement s’est prouvée incapable d’analyser nos données puisqu’il faut prédéterminer le nombre de centroïdes initial (un inconnu de la situation) et que l’algorithme ne converge pas toujours comme on pourrait penser. Dans un cas où il y a un nombre faible de distribution normale grandement espacée, comme c’est le cas avec nos simulations, il est fréquent qu’une distribution n’ait pas un unique centroïde associé. Dans ces cas, un centroïde n’est pas utilisé (il « meurt » parce qu’il n’a aucune donnée associée), ce qui fait en sorte qu’un autre centroïde ira se placer à mis chemin entre deux distributions.</p>
+                            <img src="assets/img/schema_kmean.png" style="width:100%;">
+                        </div>
+                    </div>
+                    <div id="fonctionnement">
+                        <h2 class="sub-header" id="graphes">Graphes</h2>
+                        <div>
+                            <h3 id="introGraphes">Introduction<br></h3>
+                            <div>
+                                <p class="p1">Une des facettes les plus importantes de notre projet est le calcul du chemin optimal en fonction des évènements détectés par le traitement. Pour y parvenir, de nombreux algorithmes existent dans la littérature. La plupart d’entre eux reposent sur la notion de graphe.</p>
+                                <p class="p1">La définition la plus simple d’un graphe est une liste de sommets et d’arêtes. Une bonne façon de visualiser ce concept est d’imaginer des objets dont certains sont interconnectés. Les objets sont les sommets et les connexions entre chacun sont les arêtes.</p>
+                                <p></p>
+                                <p class="p1">Afin de déterminer le chemin le plus court, le réseau routier doit être converti en multigraphe pondéré et orienté, ce qui veut dire que chaque arête a un poids, représentant le cout pour se déplacer d’un côté à l’autre de celle-ci et une orientation empêchant le déplacement dans le sens opposé. La modélisation classique représente les intersections entre les routes comme les sommets du graphe et les routes, les arêtes. Le poids des arêtes est déterminé par deux facteurs principaux. Le premier est la somme des longueurs euclidiennes de chaque élément de route, c’est-à-dire la longueur de la route. Le deuxième est la vitesse à laquelle il est le plus probable que le véhicule ait sur la route. Le ratio de ces deux facteurs donne le temps estimé pour le parcours de la route&nbsp;: c’est le poids de la route.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/img/astar_progress_animation.gif" class="pull-right" />
+                            <h3 id="astar">A*</h3>
+                            <div>
+                                <p></p>
+                                <p class="p1">L’algorithme utilisé dans notre plateforme se base sur l’algorithme A* qui évalue la route la plus courte vers une destination en explorant les plus courts chemins intermédiaires enregistrés dans une liste. Ce qui différencie A* de l’algorithme de Dijkstra est l’ajout d’une heuristique supplémentaire, c’est-à-dire un nombre entier agissant comme un poids d’arête, qui a pour effet d’orienter la recherche directement vers la destination. Le facteur heuristique que nous avons déterminé pour guider la recherche de chemin est la distance euclidienne entre les sommets et la destination.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="sub-header" id="stats">Statistiques</h2>
+                        <div>
+                            <h3 id="distributionNormale">Distribution normale<br></h3>
+                            <div>
+                                <p class="p1">Dans la nature, selon le théorème central limite, lorsque nous regroupons plusieurs données indépendantes et de mêmes types, nous obtenons une approximation de la distribution gaussienne ou normale. Cette distribution peut être modélisée par la fonction suivante&nbsp;:</p>
+                                <img src="assets/img/gaussian_eq.png" style="width:100%;">
+                                <p></p>
+                                <p style=""></p>
+                                <p class="p1">où µ représente la moyenne de la distribution&nbsp;et σ représente l’écart-type.&nbsp;</p>
+                            </div>
+                            <div>
+                                <h3 style="" id="moyenne">Moyenne<br></h3>
+                                <img src="assets/img/mu_eq.png" class="pull-right" />
+                                <p class="p1">La moyenne d’un ensemble de données est la somme de chaque élément divisée par le nombre d’éléments. Cette notion peut être utilisée sur les vecteurs avec la même définition.</p>
+                                <p class="p1">La moyenne d’un ensemble de vecteurs est donc un vecteur dont la composante x est égale à la somme de chaque composante x des vecteurs de l’ensemble divisée par la cardinalité de l’ensemble. La composante y est calculée similairement.Par la suite, l’utilisateur dispose de deux choix pour spécifier les fichiers de simulation à inclure.<br></p>
+                                <p></p>
+                            </div>
+                            <div>
+                                <h3 style="" id="ecartType">Écart type<br></h3>
+                                <img src="assets/img/sigma2_eq.png" class="pull-right" />
+                                <p class="p1">L’écart type d’un ensemble de données est la racine carrée de la moyenne de l’ensemble des différences de chaque élément de la moyenne élevée au carré. Pour calculer l’écart type, il faut donc&nbsp;:</p>
+                                <ol>
+                                    <li>Trouver la moyenne de l’ensemble.</li>
+                                    <li>Calculer la différence de chaque élément à la moyenne.</li>
+                                    <li>Élever chacune de ces différences au carré.</li>
+                                    <li>Faire la moyenne de l’ensemble obtenu à l’étape&nbsp;3.</li>
+                                    <li>Faire la racine carrée de cette moyenne.</li>
+                                </ol>
+                                <p class="p1">Cette valeur mesure l’« éparpillement » des données. Plus cette valeur est élevée, plus les données sont loin l’une de l’autre. Dans une distribution normale, 68.268&nbsp;% des données sont à moins de 1 écart type de la moyenne, et 95.449&nbsp;% sont à moins de 2 écarts types.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>

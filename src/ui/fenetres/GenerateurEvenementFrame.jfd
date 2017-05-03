@@ -1,0 +1,62 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+			"autoSize": false
+		} ) {
+			name: "this"
+			"$locationPolicy": 1
+			"$sizePolicy": 1
+			"title": "Transposition en évènements | AMNAM"
+			"resizable": false
+			"cursor": new java.awt.Cursor( 3 )
+			"defaultCloseOperation": 0
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowOpened", "thisWindowOpened", true ) )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labelTitre"
+				"text": "<html><center>Transposition en<br/>évènements en cours</center></html>"
+				"font": new java.awt.Font( ".SF NS Text", 0, 18 )
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 237
+				"height": 45
+				"x": 70
+				"y": 10
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "logoAMNAM"
+				"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 237
+				"height": 240
+				"x": 70
+				"y": 64
+			} )
+			add( new FormComponent( "javax.swing.JProgressBar" ) {
+				name: "progressBar"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 237
+				"height": 12
+				"x": 70
+				"y": 313
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonAnnuler"
+				"text": "Annuler"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonAnnulerActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 237
+				"height": 32
+				"x": 70
+				"y": 334
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 385, 400 )
+		} )
+	}
+}
