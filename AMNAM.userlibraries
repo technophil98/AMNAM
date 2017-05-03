@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="AppleJavaExtensions-1.4">
+    <archive path="/Users/technophil98/Developer/LRIMA/AMNAM/ressources/libs/AppleJavaExtensions-1.4.jar" />
+  </library>
+  <library name="darcula">
+    <archive path="/Users/technophil98/Developer/LRIMA/AMNAM/ressources/libs/darcula.jar" />
+  </library>
+  <library name="gson-2.8.0">
+    <archive path="/Users/technophil98/Developer/LRIMA/AMNAM/ressources/libs/gson-2.8.0.jar" />
+  </library>
+</eclipse-userlibraries>
+

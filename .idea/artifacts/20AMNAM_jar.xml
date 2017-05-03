@@ -2,7 +2,7 @@
   <artifact type="jar" name="20AMNAM:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/20AMNAM_jar</output-path>
     <root id="archive" name="20AMNAM.jar">
-      <element id="module-output" name="20AMNAM" />
+      <element id="module-output" name="AMNAM" />
       <element id="extracted-dir" path="$PROJECT_DIR$/ressources/libs/AppleJavaExtensions-1.4.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/ressources/libs/gson-2.8.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/ressources/libs/darcula.jar" path-in-jar="/" />
