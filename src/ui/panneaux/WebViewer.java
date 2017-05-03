@@ -67,7 +67,7 @@ public class WebViewer {
         StackPane root = new StackPane();
         Scene scene = new Scene(root);
         webView = new WebView();
-        webView.getEngine().load(WebViewer.class.getResource(url).toExternalForm());
+        webView.getEngine().load(url);
         root.getChildren().add(webView);
         return scene;
     }
@@ -79,7 +79,7 @@ public class WebViewer {
 	 */
 	public void loadURL(String url) {
         Platform.runLater(() -> {
-			webView.getEngine().load(WebViewer.class.getResource(url).toExternalForm());
+			webView.getEngine().load(url);
 			frame.setVisible(true);
 		});
     }

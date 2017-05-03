@@ -32,7 +32,7 @@ public final class UICommonUtils {
 	public static final String PATH_IMG_MAP_MARKER = "/img/icons/map_marker.png";
 
 
-	public static final double BUTTON_ICON_SIZE_RATIO = 0.4;
+	private static final double BUTTON_ICON_SIZE_RATIO = 0.4;
 	public static final String PATH_BUTTON_ICON_PLAY = "/img/button_icons/play.png";
 	public static final String PATH_BUTTON_ICON_PAUSE = "/img/button_icons/pause.png";
 	public static final String PATH_BUTTON_ICON_ZOOM_IN = "/img/button_icons/zoom_in.png";
@@ -48,10 +48,10 @@ public final class UICommonUtils {
 
 	public static final String PATH_MARIACHI_MUSIC = "/audio/mariachi.wav";
 
-	public static final String PATH_HTML_HOME = "/html/index.html";
-	public static final String PATH_HTML_A_PROPOS = "/html/index.html";
-	public static final String PATH_HTML_GUIDE = "/html/guide.html";
-	public static final String PATH_HTML_SCI_CONCEPTS = "/html/concepts_sci.html";
+	public static final String PATH_HTML_HOME = "http://lrima.cmaisonneuve.qc.ca/amnam/index.html";
+	public static final String PATH_HTML_A_PROPOS = "http://lrima.cmaisonneuve.qc.ca/amnam/index.html";
+	public static final String PATH_HTML_GUIDE = "http://lrima.cmaisonneuve.qc.ca/amnam/guide.html";
+	public static final String PATH_HTML_SCI_CONCEPTS = "http://lrima.cmaisonneuve.qc.ca/amnam/concepts_sci.html";
 
 	public static File lastFileChooserDirectory = new File(System.getProperty("user.dir")); //Cette initialisation sauve notre santé mentale
 
