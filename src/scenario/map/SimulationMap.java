@@ -284,7 +284,7 @@ public class SimulationMap {
 
 
 			final MapEdge redgeToSource = new MapEdge(graphToModify.getNextAvailableEdgeId(), medianNode.getId(), reversedEdge.getDestination(), completionInEdge * originalEdge.getWeight());
-			redgeToSource.setPoints(Arrays.copyOfRange(reversedEdge.getPoints(), rPreviousPointIndex, reversedEdge.getPoints().length));
+			redgeToSource.setPoints(Arrays.copyOfRange(reversedEdge.getPoints(), rPreviousPointIndex + 1, reversedEdge.getPoints().length));
 			graphToModify.addEdge(redgeToSource);
 		}
 
