@@ -9,6 +9,7 @@ import math.graph.Node;
  */
 public class MapNode extends Node {
 
+	private static final int FACTEUR_VITESSE_MAXIMALE = 120;
 	private int id;
 	private double x, y, z;
 
@@ -26,6 +27,23 @@ public class MapNode extends Node {
 		this.x = x;
 		this.y = y;
 		this.z = z;
+	}
+
+	@Override
+	public double heuristicToNode(Node n) {
+		if (n instanceof MapNode) {
+
+			MapNode dest = ((MapNode) n);
+
+			final double deltaX = dest.getX() - this.getX();
+			final double deltaY = dest.getY() - this.getY();
+
+			final double h = Math.sqrt(deltaX * deltaX + deltaY * deltaY) / FACTEUR_VITESSE_MAXIMALE;
+			System.out.println(h);
+			return h;
+		}
+		else
+			return 0;
 	}
 
 	/**
