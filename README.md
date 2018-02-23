@@ -4,4 +4,4 @@
 
 ## Research project by [Philippe Rivest](https://github.com/technophil98) and [Pascal Dally-Bélanger](https://github.com/wellme)
 
-See documentation (french) in `doc/` directory.
+See documentation webpages (_french_) in `doc/` directory.
